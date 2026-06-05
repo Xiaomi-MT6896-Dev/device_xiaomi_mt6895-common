@@ -29,6 +29,11 @@ write_headers "aristotle pearl plato rembrandt rubens xaga"
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
+# Include FM blobs if needed
+printf "\n%s\n" "ifeq (\$(BOARD_HAVE_MTK_FM),true)" >> "${PRODUCTMK}"
+write_makefiles "${MY_DIR}/proprietary-files-fm.txt" true
+printf "%s\n" "endif" >> "${PRODUCTMK}"
+
 # Finish
 write_footers
 

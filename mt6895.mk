@@ -149,6 +149,12 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl.custom \
     fastbootd
 
+# FM Radio
+ifeq ($(BOARD_HAVE_MTK_FM),true)
+PRODUCT_PACKAGES += \
+    FMRadio
+endif
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
@@ -413,6 +419,11 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/xiaomi
+
+ifeq ($(BOARD_HAVE_MTK_FM),true)
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/mediatek/libfmjni
+endif
 
 # TEE
 BOARD_TEE_VARIANT ?= beanpod
