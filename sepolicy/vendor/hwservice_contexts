@@ -18,3 +18,6 @@ vendor.xiaomi.hardware.mlipay::IMlipayService                                   
 
 # Mtdservice
 vendor.xiaomi.hardware.mtdservice::IMTService                                        u:object_r:hal_mtdservice_hwservice:s0
+
+# Soter
+vendor.xiaomi.hardware.soterservice::ISoter                                        u:object_r:hal_soterservice_hwservice:s0
