@@ -267,7 +267,7 @@ PRODUCT_PACKAGES += \
 
 # Native libraries whitelist
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    $(LOCAL_PATH)/configs/${BOARD_TEE_VARIANT}/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Media
 PRODUCT_PACKAGES += \
@@ -281,7 +281,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/${BOARD_TEE_VARIANT}/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Overlays
 PRODUCT_PACKAGES += \
