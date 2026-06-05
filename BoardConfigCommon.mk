@@ -170,6 +170,12 @@ ifeq ($(BOARD_HAVE_MTK_FM),true)
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor-fm.prop
 endif
 
+ifeq ($(TARGET_DEVICE),pearl)
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor-sf-pearl.prop
+else
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor-sf.prop
+endif
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.mt6895
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"

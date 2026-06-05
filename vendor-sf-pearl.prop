@@ -1,0 +1,4 @@
+# SurfaceFlinger
+debug.sf.high_fps.late.sf.duration=12300000
+debug.sf.high_fps.early.sf.duration=12300000
+debug.sf.high_fps.earlyGl.sf.duration=12300000
