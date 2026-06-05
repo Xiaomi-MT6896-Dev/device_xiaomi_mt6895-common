@@ -11,4 +11,9 @@ SPDX-License-Identifier: Apache-2.0
         <fqname>@1.2::ISecureElement/SIM2</fqname>
         <fqname>@1.2::ISecureElement/eSE1</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.soterservice</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::ISoter/default</fqname>
+    </hal>
 </manifest>

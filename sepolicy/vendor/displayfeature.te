@@ -49,6 +49,9 @@ allow vendor_hal_displayfeature_xiaomi_default vendor_display_data_file:file cre
 allow vendor_hal_displayfeature_xiaomi_default mnt_vendor_file:dir search;
 rw_dir_file(vendor_hal_displayfeature_xiaomi_default, persist_data_file)
 
+r_dir_file(vendor_hal_displayfeature_xiaomi_default, sysfs_leds)
+allow vendor_hal_displayfeature_xiaomi_default sysfs_leds:file rw_file_perms;
+
 allow vendor_hal_displayfeature_xiaomi_default vendor_displayfeature_device:chr_file rw_file_perms;
 
 allow vendor_hal_displayfeature_xiaomi_default fwk_sensor_hwservice:hwservice_manager find;
