@@ -243,9 +243,16 @@ PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
     android.hardware.security.secureclock-V1-ndk_platform.vendor \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
-    android.hardware.security.rkp-V1-ndk.vendor \
     lib_android_keymaster_keymint_utils.vendor \
     libkeymint.vendor
+
+ifeq ($(BOARD_TEE_VARIANT),mitee)
+PRODUCT_PACKAGES += \
+    android.hardware.security.rkp-V3-ndk.vendor
+else
+PRODUCT_PACKAGES += \
+    android.hardware.security.rkp-V1-ndk.vendor
+endif
 
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml

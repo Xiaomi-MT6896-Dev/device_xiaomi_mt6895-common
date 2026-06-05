@@ -1,0 +1,14 @@
+<!--
+Copyright (C) 2023-2024 The LineageOS Project
+
+SPDX-License-Identifier: Apache-2.0
+-->
+<manifest version="7.0" type="device" target-level="6">
+    <hal format="hidl">
+        <name>android.hardware.secure_element</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.2::ISecureElement/SIM1</fqname>
+        <fqname>@1.2::ISecureElement/SIM2</fqname>
+        <fqname>@1.2::ISecureElement/eSE1</fqname>
+    </hal>
+</manifest>
