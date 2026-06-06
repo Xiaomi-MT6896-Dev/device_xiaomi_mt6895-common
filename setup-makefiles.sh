@@ -29,11 +29,6 @@ write_headers "aristotle pearl plato rembrandt rubens xaga"
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
-# Include FM blobs if needed
-printf "\n%s\n" "ifeq (\$(BOARD_HAVE_MTK_FM),true)" >> "${PRODUCTMK}"
-write_makefiles "${MY_DIR}/proprietary-files-fm.txt" true
-printf "%s\n" "endif" >> "${PRODUCTMK}"
-
 # Finish
 write_footers
 
@@ -48,6 +43,11 @@ if [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
     # The standard device blobs
     write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" true
     write_makefiles "${MY_DIR}/proprietary-files-${TARGET_TEE}.txt" true
+
+    # Include FM blobs if needed
+    printf "\n%s\n" "ifeq (\$(BOARD_HAVE_MTK_FM),true)" >> "${PRODUCTMK}"
+    write_makefiles "${MY_DIR}/proprietary-files-fm.txt" true
+    printf "%s\n" "endif" >> "${PRODUCTMK}"
 
     if [ -f "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt" ]; then
         append_firmware_calls_to_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt"
