@@ -153,7 +153,12 @@ PRODUCT_PACKAGES += \
 BOARD_HAVE_MTK_FM ?= false
 ifeq ($(BOARD_HAVE_MTK_FM),true)
 PRODUCT_PACKAGES += \
-    FMRadio
+    FMRadio \
+    init.fmradio_drv.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/fm/mt6635_fm_v1_coeff.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt6635_fm_v1_coeff.bin \
+    $(LOCAL_PATH)/configs/fm/mt6635_fm_v1_patch.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/mt6635_fm_v1_patch.bin
 endif
 
 # Fingerprint

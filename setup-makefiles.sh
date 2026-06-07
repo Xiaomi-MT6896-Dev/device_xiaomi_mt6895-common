@@ -44,11 +44,6 @@ if [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
     write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" true
     write_makefiles "${MY_DIR}/proprietary-files-${TARGET_TEE}.txt" true
 
-    # Include FM blobs if needed
-    printf "\n%s\n" "ifeq (\$(BOARD_HAVE_MTK_FM),true)" >> "${PRODUCTMK}"
-    write_makefiles "${MY_DIR}/proprietary-files-fm.txt" true
-    printf "%s\n" "endif" >> "${PRODUCTMK}"
-
     if [ -f "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt" ]; then
         append_firmware_calls_to_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt"
     fi

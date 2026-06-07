@@ -1,6 +1,0 @@
-# FM Radio
-vendor/etc/init/init.fmradio_drv.rc
-
-# FM Radio (firmware)
-vendor/firmware/mt6635_fm_v1_coeff.bin
-vendor/firmware/mt6635_fm_v1_patch.bin
